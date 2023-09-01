@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioComissoes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="81bdd5c1-0bb0-4525-815b-461d83196fe4">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SeuBarriga-DataAdapter.xml"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="valorComissao" class="java.lang.Double">
+		<fieldDescription><![CDATA[valorComissao]]></fieldDescription>
+	</field>
+	<field name="pag" class="Atributos.Pagamentos">
+		<fieldDescription><![CDATA[pag]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="0" width="100" height="30" uuid="910d02e9-ece2-4f77-975e-de3986a5311a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8be21f22-518b-4599-885d-41c5f5d245f4"/>
+				</reportElement>
+				<text><![CDATA[dataPagamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="30" uuid="b5ee50ed-f559-44e2-87a6-be8585592904">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cca0b2c9-d2d7-480a-983f-7b54b8d57ce0"/>
+				</reportElement>
+				<text><![CDATA[valorComissao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="0ce0ce79-c9a5-4596-a683-873148dc6288">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="df3ad50a-4bb0-4bd0-b935-b715ba8bc738"/>
+				</reportElement>
+				<text><![CDATA[nomeCliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="100" height="30" uuid="8efff4d0-d846-4b7c-8938-690b29e105c1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="48b98d91-f746-4c19-8c8d-d636e8f5b996"/>
+				</reportElement>
+				<text><![CDATA[nomeDevedor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="39e4c372-8dbf-4954-bf8b-290187eafa6b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cca0b2c9-d2d7-480a-983f-7b54b8d57ce0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{valorComissao}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="250" y="0" width="100" height="30" uuid="322b4796-4aaa-4bd3-8fd3-5cd60113920a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be8bf8dd-f0aa-4429-b108-c307ed2a5aad"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{pag}.getDataPagamento()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="100" height="30" uuid="edb60637-ac7b-4d4a-8917-fbc0d7b8c202">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95b0f6af-93a2-4210-9edb-dfa86e9c54b4"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{pag}.getNegociacao().getDevedor().getNomeDevedor()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="59f15114-4db3-4913-abad-4f6fd4cf78af">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc7f772d-4031-4658-a003-79c28e8d10bc"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{pag}.getNegociacao().getCliente().getNomeCliente()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

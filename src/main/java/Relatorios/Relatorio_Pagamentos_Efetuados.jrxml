@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8fdc9c0f-28a6-4410-a3ac-d189c655eb8a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="encargos" class="java.lang.Double">
+		<fieldDescription><![CDATA[encargos]]></fieldDescription>
+	</field>
+	<field name="formaPagamento" class="java.lang.String">
+		<fieldDescription><![CDATA[formaPagamento]]></fieldDescription>
+	</field>
+	<field name="valorParcela" class="java.lang.Double">
+		<fieldDescription><![CDATA[valorParcela]]></fieldDescription>
+	</field>
+	<field name="dataPagamento" class="java.time.LocalDate">
+		<fieldDescription><![CDATA[dataPagamento]]></fieldDescription>
+	</field>
+	<field name="negociacao" class="Atributos.Negociacao">
+		<fieldDescription><![CDATA[negociacao]]></fieldDescription>
+	</field>
+	<field name="dataVencimento" class="java.time.LocalDate">
+		<fieldDescription><![CDATA[dataVencimento]]></fieldDescription>
+	</field>
+	<field name="valorPago" class="java.lang.Double">
+		<fieldDescription><![CDATA[valorPago]]></fieldDescription>
+	</field>
+	<field name="pago" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[pago]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="0" width="370" height="50" uuid="58b40f18-84f4-41cd-9122-9148bc21bce3"/>
+				<textElement>
+					<font size="33"/>
+				</textElement>
+				<text><![CDATA[Relatório de pagamentos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="210" y="0" width="100" height="30" uuid="50fc6b02-0b29-4cb0-ae50-1fa9bc2073f2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a0ff79df-ede7-457c-b49a-a34f555f8c09"/>
+				</reportElement>
+				<text><![CDATA[dataPagamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="adee12d6-1f1a-48f7-aeae-6714813e9cfb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f57349b-2770-439a-8670-22d1aea7007e"/>
+				</reportElement>
+				<text><![CDATA[negociacao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="30" uuid="02d10168-a821-45b3-876e-b2be9cf6ef37">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="81d2f929-c8ce-4629-83b6-cca235d1f4b3"/>
+				</reportElement>
+				<text><![CDATA[valorPago]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="210" y="0" width="100" height="30" uuid="c8511a6f-7ef2-480e-9b08-317b88fe8370">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a0ff79df-ede7-457c-b49a-a34f555f8c09"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dataPagamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="ae702719-4076-4cbd-baf9-f792b2e71778">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f57349b-2770-439a-8670-22d1aea7007e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{negociacao}.getCliente().getNomeCliente()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="51574040-1fdd-459e-804f-6e2c164363a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="81d2f929-c8ce-4629-83b6-cca235d1f4b3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{valorPago}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

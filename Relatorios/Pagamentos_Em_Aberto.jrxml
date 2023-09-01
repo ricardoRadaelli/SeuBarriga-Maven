@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pagamentos_Em_Aberto" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba16334d-c228-4300-9146-c62e2908de9d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="encargos" class="java.lang.Double">
+		<fieldDescription><![CDATA[encargos]]></fieldDescription>
+	</field>
+	<field name="valorParcela" class="java.lang.Double">
+		<fieldDescription><![CDATA[valorParcela]]></fieldDescription>
+	</field>
+	<field name="negociacao" class="Atributos.Negociacao">
+		<fieldDescription><![CDATA[negociacao]]></fieldDescription>
+	</field>
+	<field name="dataVencimento" class="java.time.LocalDate">
+		<fieldDescription><![CDATA[dataVencimento]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="60" uuid="b33dd0bd-9d69-4159-bfa3-8e48e79cea59"/>
+				<textElement textAlignment="Center">
+					<font size="47"/>
+				</textElement>
+				<text><![CDATA[Pagamentos em aberto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="90" width="250" height="20" uuid="03767796-70d7-4de6-899b-1b002bc95477"/>
+				<textFieldExpression><![CDATA[$F{negociacao}.getDevedor().getNomeDevedor()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="90" width="56" height="20" uuid="220364be-6f6a-4cff-bf18-966830037595"/>
+				<text><![CDATA[Devedor:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="321" y="0" width="100" height="30" uuid="b9de33a4-a61b-4aec-bec1-0e485dd8a2c0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="82e01c6a-3ba8-4bf7-8424-733aaa04dc78"/>
+				</reportElement>
+				<text><![CDATA[dataVencimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="30" uuid="3e230776-8885-4453-8248-c9c45b83e28f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3c66d02-0c84-450c-9ab1-bbbab474b8d5"/>
+				</reportElement>
+				<text><![CDATA[valorParcela]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="2" width="100" height="30" uuid="7fe64350-592f-4343-be9d-b64b557f7186">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f24b7a9f-1ee5-4822-a2af-a74b2278218d"/>
+				</reportElement>
+				<text><![CDATA[negociacao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="7e18e9b4-cc83-4f8c-bccf-3f5654f61a7f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8c1c8e2-61b4-4dec-aeaa-6c48b8c6e108"/>
+				</reportElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="319" y="0" width="100" height="30" uuid="80f452a2-14d7-4384-8698-e1f1644c0e27">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="82e01c6a-3ba8-4bf7-8424-733aaa04dc78"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dataVencimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="97d52ffe-5945-4b9f-b214-a4c75ec2f3e8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a3c66d02-0c84-450c-9ab1-bbbab474b8d5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{valorParcela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="0" width="100" height="30" uuid="cbf56e9b-f20f-4e13-bf4e-5057f320d72b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f24b7a9f-1ee5-4822-a2af-a74b2278218d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{negociacao}.getDataNegociacao()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="-2" width="100" height="30" uuid="46df5269-452a-4957-8b20-7b9d14f49ee4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8c1c8e2-61b4-4dec-aeaa-6c48b8c6e108"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{negociacao}.getCliente().getNomeCliente()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
